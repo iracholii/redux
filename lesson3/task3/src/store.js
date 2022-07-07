@@ -1,4 +1,3 @@
-/* eslint-disable no-underscore-dangle */
 import { createStore, combineReducers } from 'redux';
 import languageReducer from './language.reducer';
 import cartReducer from './cart.reducer';
@@ -10,9 +9,6 @@ const appReducer = combineReducers({
   cart: cartReducer,
 });
 
-const store = createStore(
-  appReducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-);
+const store = createStore(appReducer);
 
 export default store;
