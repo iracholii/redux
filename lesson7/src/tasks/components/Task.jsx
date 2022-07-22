@@ -1,6 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-
 import * as tasksActions from '../tasks.actions';
 
 const Task = ({ text, done, id, updateTask, deleteTask }) => {
@@ -26,3 +26,11 @@ const mapDispatch = {
 };
 
 export default connect(null, mapDispatch)(Task);
+
+Task.propTypes = {
+  text: PropTypes.string.isRequired,
+  done: PropTypes.bool.isRequired,
+  id: PropTypes.string.isRequired,
+  updateTask: PropTypes.func.isRequired,
+  deleteTask: PropTypes.func.isRequired,
+};

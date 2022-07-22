@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import * as tasksActions from '../tasks.actions';
 import TasksList from './TasksList';
@@ -25,3 +26,7 @@ const mapDispatch = {
 };
 
 export default connect(null, mapDispatch)(TodoList);
+
+TodoList.propTypes = {
+  getTasksList: PropTypes.func.isRequired,
+};

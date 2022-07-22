@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import * as tasksActions from '../tasks.actions';
 
@@ -34,3 +35,7 @@ const mapDispatch = {
 };
 
 export default connect(null, mapDispatch)(CreateTaskInput);
+
+CreateTaskInput.propTypes = {
+  createTask: PropTypes.func.isRequired,
+};
